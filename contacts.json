@@ -1,0 +1,14 @@
+{
+    "contacts": [
+        {
+            "name": "Ali Valiyev",
+            "phone": "991231212",
+            "email": "ali@gmail.com"
+        },
+        {
+            "name": "Vali Aliyev",
+            "phone": "881231212",
+            "email": "vali@gmail.com"
+        }
+    ]
+}

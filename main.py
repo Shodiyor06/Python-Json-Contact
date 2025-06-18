@@ -1,7 +1,9 @@
 import json
 
-f = open('contacts.json', 'w')
-f.write('{"contacts": []}')
+
+f = open('contacts.json', 'r+')
+if f.read() == "":
+    f.write('{"contacts": []}')
 f.close()
 
 
@@ -52,7 +54,12 @@ def list_contacts() -> None:
     Args:
         contact_list (List[str]): Kontaktlar ro‘yxati.
     """
-    pass
+    f = open('contacts.json')
+    contacts = json.loads(f.read())
+    f.close()
+
+    for contact in contacts['contacts']:
+        print(contact['name'], contact['phone'], contact['email'])
 
 
 def search_contact() -> None:

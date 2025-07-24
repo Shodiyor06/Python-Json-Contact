@@ -69,7 +69,11 @@ def search_contact() -> None:
     Args:
         contact_list (List[str]): Kontaktlar ro‘yxati.
     """
-    pass
+    name = input("Qidirilayotgan kontakt ismini kiriting: ").strip()
+    for contact in json.loads(open('contacts.json').read())['contacts']:
+        if contact['name'].lower() == name.lower():
+            print(f"Kontakt topildi: {contact['name']}, {contact['phone']}, {contact['email']}")
+            return 
 
 
 def filter_gmail_contacts() -> None:
@@ -79,7 +83,9 @@ def filter_gmail_contacts() -> None:
     Args:
         contact_list (List[str]): Kontaktlar ro‘yxati.
     """
-    pass
+    for contact in json.loads(open('contacts.json').read())['contacts']:
+        if contact['email'].endswith('@gmail.com'):
+            print(f"{contact['email']}")
 
 
 def main() -> None:
